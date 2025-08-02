@@ -61,6 +61,20 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// MockMate Custom Colors
+				navy: {
+					primary: 'hsl(var(--navy-primary))',
+					dark: 'hsl(var(--navy-dark))',
+					light: 'hsl(var(--navy-light))'
+				},
+				beige: {
+					primary: 'hsl(var(--beige-primary))',
+					secondary: 'hsl(var(--beige-secondary))'
+				},
+				cream: {
+					primary: 'hsl(var(--cream-primary))',
+					secondary: 'hsl(var(--cream-secondary))'
 				}
 			},
 			borderRadius: {

@@ -2,41 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* MockMate Design System - Navy Blue & Beige/Cream Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* MockMate Brand Colors - Navy Blue & Beige/Cream */
+    --background: 42 78% 95%;
+    --foreground: 220 84% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 40% 98%;
+    --card-foreground: 220 84% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 40% 98%;
+    --popover-foreground: 220 84% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 220 84% 25%;
+    --primary-foreground: 42 78% 95%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 42 55% 88%;
+    --secondary-foreground: 220 84% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 42 30% 90%;
+    --muted-foreground: 220 20% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 42 65% 85%;
+    --accent-foreground: 220 84% 25%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 42 78% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 42 30% 85%;
+    --input: 42 30% 85%;
+    --ring: 220 84% 25%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* MockMate Custom Design Tokens */
+    --navy-primary: 220 84% 25%;
+    --navy-dark: 220 84% 20%;
+    --navy-light: 220 60% 40%;
+    --beige-primary: 42 78% 95%;
+    --beige-secondary: 42 55% 88%;
+    --cream-primary: 40 40% 98%;
+    --cream-secondary: 42 30% 90%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--navy-primary)), hsl(var(--navy-light)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--beige-primary)), hsl(var(--cream-primary)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--cream-primary)), hsl(var(--beige-secondary)));
+
+    /* Glassmorphism */
+    --glass-bg: hsl(var(--cream-primary) / 0.25);
+    --glass-border: hsl(var(--border) / 0.18);
+    --glass-shadow: 0 8px 32px hsl(var(--navy-primary) / 0.15);
+
+    /* Neumorphism */
+    --neuro-light: hsl(var(--beige-primary));
+    --neuro-dark: hsl(var(--beige-secondary));
+    --neuro-shadow-light: 0 8px 16px hsl(var(--cream-secondary) / 0.4);
+    --neuro-shadow-dark: 0 8px 16px hsl(var(--beige-secondary) / 0.6);
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-fade: all 0.3s ease-out;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +85,44 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Mode - Navy & Warm Tones */
+    --background: 220 84% 8%;
+    --foreground: 42 78% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 84% 12%;
+    --card-foreground: 42 78% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 84% 12%;
+    --popover-foreground: 42 78% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 42 78% 85%;
+    --primary-foreground: 220 84% 15%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 60% 15%;
+    --secondary-foreground: 42 78% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 60% 15%;
+    --muted-foreground: 42 30% 70%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 220 50% 20%;
+    --accent-foreground: 42 78% 95%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 42 78% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 220 50% 20%;
+    --input: 220 50% 20%;
+    --ring: 42 78% 85%;
+
+    /* Dark Mode Custom Tokens */
+    --navy-primary: 42 78% 85%;
+    --navy-dark: 42 78% 90%;
+    --navy-light: 42 60% 75%;
+    --beige-primary: 220 84% 8%;
+    --beige-secondary: 220 60% 15%;
+    --cream-primary: 220 84% 12%;
+    --cream-secondary: 220 50% 20%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +140,117 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  /* MockMate Component Classes */
+  
+  /* Glass Cards */
+  .glass-card {
+    @apply backdrop-blur-lg border border-opacity-20;
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  /* Neumorphic Cards */
+  .neuro-card {
+    background: var(--neuro-light);
+    box-shadow: var(--neuro-shadow-light), var(--neuro-shadow-dark);
+    @apply border-0;
+  }
+
+  /* Animation Classes */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  .animate-bounce-in {
+    animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
+  /* Interactive Elements */
+  .hover-lift {
+    transition: var(--transition-smooth);
+    @apply hover:scale-105 hover:shadow-lg;
+  }
+
+  .hover-glow {
+    transition: var(--transition-smooth);
+    @apply hover:shadow-xl;
+  }
+
+  /* Gradient Backgrounds */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
